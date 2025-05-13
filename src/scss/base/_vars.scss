@@ -1,0 +1,26 @@
+:root {
+	--container-width: 1160px;
+	--container-padding: 15px;
+
+	--font-main: 'Poppins', sans-serif;
+	// --font-accent: 'Playfair Display', serif;
+
+	--page-bg: #F9F8FD;
+	--text-color: #22253B;
+	--light-color: #EAF2F5;
+	--accent: #F15525;
+
+    --laptop-size: 1199px;
+	--tablet-size: 959px;
+	--mobile-size: 599px;
+
+	--font-size-main: 16px;
+	--font-size-small: 14px;
+	--font-size-big: 42px;
+	--font-size-medium: 32px;
+}
+
+.dark {
+    --page-bg: #252526;
+    --text-color: #fff;
+}

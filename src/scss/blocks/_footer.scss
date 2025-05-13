@@ -1,0 +1,13 @@
+.footer {
+	&__flex {
+		display: flex;
+	}
+
+	.nav__list {
+		display: block;
+	}
+
+	.nav__item:not(:last-child){
+		margin-bottom: 25px;
+	}
+}

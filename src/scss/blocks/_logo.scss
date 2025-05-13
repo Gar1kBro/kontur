@@ -1,0 +1,14 @@
+.logo {
+    color: #000;
+
+    &__c {
+        text-transform: uppercase;
+        color: #38BFF2;
+    }
+
+    &__d {
+        text-transform: uppercase;
+        color: var(--accent);
+        transform: rotate(45deg);
+    }
+}

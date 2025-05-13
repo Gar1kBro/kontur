@@ -1,0 +1,43 @@
+.info {
+    margin-top: 60px;
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+    }
+
+    &__title {
+        margin-bottom: 18px;
+        font-size: var(--font-size-medium);
+    }
+
+    &__paragraph {
+        margin-bottom: 15px;
+    }
+    
+    &__row {
+        display: flex;
+        align-items: stretch;
+        gap: 32px;
+    }
+
+    &__row:last-child {
+        flex-direction: row-reverse;
+    }
+
+    img {
+        max-width: 397px;
+        height: 313px;
+        border-radius: 40px;
+        object-fit: fill;
+    }
+
+    &__box {
+        padding: 54px 100px;
+        // flex-shrink: 2;
+        background-color: #EAF2F5;
+        border-radius: 40px;
+    }
+}

@@ -1,0 +1,11 @@
+.header {
+	&__inner {
+		margin-top: 24px;
+		padding: 11px 35px 15px;
+		background-color: #fff;
+		border-radius: 75px;
+		display: flex;
+		align-items: center;
+		gap: 50px;
+	}
+}

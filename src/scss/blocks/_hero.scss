@@ -1,0 +1,78 @@
+.hero {
+
+    .baner {
+        margin-top: 20px;
+        padding: 60px 10px 60px 90px;
+        // background-color: #000;
+        background-image: url('../../img/BG-baner.png');
+        background-position: 15% 55%;
+        border-radius: 30px;
+
+        &__flex {
+            display: flex;
+            align-items: center;
+        }
+
+        &__title {
+            width: 80%;
+            margin-bottom: 25px;
+            font-size: var(--font-size-big);
+            font-weight: 500;
+        }
+
+        &__paragraph {
+            margin-bottom: 16px;
+            padding-top: 25px;
+            width: 50%;
+            border-top: 1px solid #DEDEDE;
+            line-height: 23px;
+        }
+
+        &__button {
+            background-color: var(--accent);
+            padding: 20px 30px;
+            border-radius: 80px;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        background-color: var(--accent);
+    }
+
+    .swiper-button-prev::after, .swiper-button-next::after {
+        content: '';
+    }
+}
+
+.right-col {
+    width: 50%;
+}
+
+
+.right-col > img {
+    object-fit: contain;
+}
+
+.color-acent {
+    color: var(--accent)
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    content: ">";
+}
