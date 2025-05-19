@@ -1,13 +1,155 @@
 .footer {
-	&__flex {
-		display: flex;
-	}
+  margin-top: 60px;
 
-	.nav__list {
-		display: block;
-	}
+  .logo {
+    display: inline-block;
+    margin-bottom: 37px;
+    font-size: 36px;
+  }
 
-	.nav__item:not(:last-child){
-		margin-bottom: 25px;
-	}
+  &__logo-text {
+    display: inline-block;
+    width: 156px;
+    color:var(--ordinary-color);
+    text-align: left;
+  }
+
+  &__list {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__link {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: background .3s ease;
+  }
+
+  &__link_inst {
+    background-image: url(../../img/svg/inst.svg);
+  }
+  &__link_inst:hover {
+    background-image: url(../../img/svg/inst-hover.svg);
+  }
+
+  &__link_vk {
+    background-image: url(../../img/svg/vk.svg);
+  }
+
+  &__link_vk:hover {
+    background-image: url(../../img/svg/vk-hover.svg);
+  }
+
+  &__link_fb {
+    background-image: url(../../img/svg/fb.svg);
+  }
+
+  &__link_fb:hover {
+    background-image: url(../../img/svg/fb-hover.svg);
+  }
+
+  &__link_yt {
+    background-image: url(../../img/svg/yt.svg);
+  }
+  &__link_yt:hover {
+    background-image: url(../../img/svg/yt-hover.svg);
+  }
+
+
+  &__mail {
+    color: var(--text-color)
+  }
+
+  & .tel {
+    margin-bottom: 5px;
+  }
+
+  &__copyrating {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    padding: 28px 0;
+    color:var(--ordinary-color);
+    border-top: 1px solid var(--ordinary-color);
+  }
+
+  &__copyrating-text {
+    margin-right: auto;
+  }
+ 
+  &__copyrating-link {
+    display: block;
+    color:var(--ordinary-color);
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  &__left-col {
+    width: 50%;
+  }
+
+  &__right-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav__list {
+    display: block;
+  }
+
+  .nav__item:not(:last-child){
+    margin-bottom: 25px;
+  }
+}
+
+
+@media (max-width: 959px) {
+  .footer {
+    text-align: center;
+
+    .logo {
+      margin-bottom: 25px;
+    }
+    
+    &__flex {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    &__list {
+      justify-content: center;
+      margin-bottom: 43px;
+    }
+
+    &__left-col {
+      width: 100%;
+    }
+
+    &__center-col {
+      margin-bottom: 43px;
+    }
+
+    &__copyrating {
+      font-size: var(--font-size-extra-small);
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__copyrating-text {
+      margin-right: 0;
+      margin-bottom: 7px;
+    }
+
+    &__copyrating-link {
+      color:var(--accent);
+    }
+  }
 }

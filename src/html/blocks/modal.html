@@ -1,0 +1,21 @@
+<div class="modal-wrapper" id="dialog-content" style="display:none;max-width:500px;">
+    <form action="/submit" class="feedback">
+        <fieldset class="feedback__fieldset">
+            <legend class="feedback__legend"> Заказать звонок </legend>
+                <label class="feedback__label" for="name">Имя</label>
+                <input class="feedback__input" type="text" name="name" id="name" placeholder="ваше  имя">
+                <label class="feedback__label" for="phone">Телефон</label>
+                <input class="feedback__input" type="number" name="phone" id="phone" placeholder="+7 ХХХ - ХХХ - ХХ -ХХ">
+                <label class="feedback__label" for="Email">Email</label>
+                <input class="feedback__input" type="text" name="email" id="email" placeholder="mail@site.com">
+                <label class="feedback__label" for="massege">Сообщение</label>
+                
+                <textarea class="feedback__textarea" name="massege" id="massege" placeholder="Ваше сообщение ..."></textarea>
+                <p class="feedback__text">
+                    Нажимая кнопку “Отправить”,  соглашаюсь с <a class="feedback__link" href="#">политикой конфидениальности</a>
+                </p>
+                <input class="feedback__button" type="submit" value="Отправить &#8599">
+            
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,64 @@
+.feedback {
+    &__form {
+        width: 635px;
+    }
+
+    &__legend {
+        margin-bottom: 46px;
+        color: rgb(34, 37, 59);
+        font-family: 'Gilroy', sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 16px;
+        color: #000;
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 500;
+        line-height: 19px;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        margin-bottom: 24px;
+        padding: 28px;
+        border: 1px solid rgb(159, 159, 159);
+        border-radius: 10px;
+    }
+
+    &__textarea {
+        display: block;
+        width: 100%;
+        margin-bottom: 16px;
+        padding: 28px;
+        border: 1px solid rgb(159, 159, 159);
+        border-radius: 10px;
+    }
+
+    &__text {
+        width: 80%;
+        margin-bottom: 25px;
+        color: #9F9F9F;
+        font-family: 'Gilroy', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+    }
+
+    &__link {
+        color: var(--accent);
+    }
+
+    input[type=submit] {
+        display: inline-block;
+        background-color: var(--accent) ;
+        padding: 20px 30px;
+        border-radius: 80px;
+        color: #fff;
+        cursor: pointer;
+    }
+}

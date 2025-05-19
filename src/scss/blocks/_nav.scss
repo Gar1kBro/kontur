@@ -4,10 +4,45 @@
 	&__list {
 		display: flex;
 		gap: 41px;
+		// justify-content: space-between;
 	}
 
 	&__link {
 		color: var(--text-color);
 		font-size: var(--font-size-small);
+		transition: color .3s ease;
+  	}
+
+	&__link:hover {
+		color: var(--accent);
 	}
 }
+
+
+@media (max-width: 959px) {
+	.nav {
+		padding-top: 80px;
+		position: absolute;
+		visibility: hidden;
+		top: -101%;
+		left:0 ;
+		z-index: 2;
+		background-color: #fff;
+
+		&__list {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+	
+	.active {
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		visibility: visible;
+}
+
+}
+

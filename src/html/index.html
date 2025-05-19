@@ -6,13 +6,113 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Стартовый шаблон</title>
 		<link rel="stylesheet" href="./css/main.css" />
+		<script src="https://api-maps.yandex.ru/v3/?apikey=8df5c7b5-d82b-4841-8125-fd2231e587d1&lang=ru_RU"></script>
+
+
+
+<!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32825ccf49ca321d717fb0f8766439355ae8d288d5e71430d72dca4267460360&amp;width=1280&amp;height=493&amp;lang=ru_RU&amp;scroll=true"></script> -->
+
+
+		<script>
+			initMap();
+	
+			async function initMap() {
+				await ymaps3.ready;
+				const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker} = ymaps3;
+	
+				const map = new YMap(
+					document.getElementById('map'),
+					{
+						location: {
+						// Координаты центра карты
+						center: [82.926493, 55.028894],
+						// Уровень масштабирования
+						zoom: 16
+					},
+					
+					}
+				);
+
+
+				map.addChild(new YMapDefaultSchemeLayer());	
+				map.addChild(new YMapDefaultFeaturesLayer());
+
+				const content = document.createElement('div');
+				const balun = document.createElement('p')
+				content.appendChild(balun);
+			
+
+				// Инициализируйте маркер
+				const marker = new YMapMarker(
+				{
+					coordinates: [82.9258, 55.0296],
+					disableRoundCoordinates: false,
+				},
+				content
+				);
+
+				// Добавьте маркер на карту
+				map.addChild(marker);
+
+				content.style.width = '50px';
+					content.style.height = '50px';
+					content.style.backgroundSize = 'cover';
+					content.style.backgroundImage = "url('../img/map-logo.svg')";
+					content.style.position = 'relative';
+
+					balun.style.position = 'absolute';
+					balun.style.width = '230px';
+					balun.style.padding = '10px';
+					balun.style.borderRadius = '9px';
+					balun.style.fontSize = '18px';
+					balun.style.fontWeight = '700';
+					balun.style.backgroundColor = "#fff";
+					balun.style.top = '0'
+					balun.style.left = '60px';
+					balun.textContent = 'Депутатская улица, 46'
+
+				function myFunction(x) {
+				if (x.matches) { // Если медиа запрос совпадает
+					content.style.width = '30px';
+					content.style.height = '30px';
+					
+					balun.style.width = '200px';
+					balun.style.padding = '10px';
+		
+					balun.style.fontSize = '14px';
+					
+					balun.style.top = '50px'
+					
+					balun.style.left = '-70px';
+					
+				} else {
+					content.style.width = '50px';
+					content.style.height = '50px';
+					
+					balun.style.width = '230px';
+					balun.style.padding = '10px';
+					balun.style.fontSize = '18px';
+					balun.style.top = '0'
+					balun.style.left = '60px';
+				}
+				}
+
+				var x = window.matchMedia("(max-width: 959px)")
+				myFunction(x) // Вызов функции прослушивателя во время выполнения
+				x.addListener(myFunction) // Присоединить функцию прослушивателя при изменении состояния
+			
+    		}
+
+		</script>
 	</head>
 	<body>
 		@@include('blocks/header.html')
 		@@include('blocks/hero.html')
 		@@include('blocks/skill.html')
-		@@include('blocks/info.html')
+		<!-- @@include('blocks/info.html') -->
 		@@include('blocks/galery.html')
+		@@include('blocks/map.html')
+		@@include('blocks/modal.html')
 		@@include('blocks/footer.html')
 		<script src="./js/index.bundle.js"></script>
 	</body>

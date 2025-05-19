@@ -17,8 +17,10 @@
 		"gulp-plumber": "^1.2.1",
 		"gulp-sass": "^5.1.0",
 		"gulp-sass-glob": "^1.1.0",
+		"gulp-sass-image": "^1.2.1",
 		"gulp-server-livereload": "^1.9.2",
 		"gulp-sourcemaps": "^3.0.0",
+		"gulp-svg-sprite": "^2.0.3",
 		"gulp-webp": "^4.0.1",
 		"gulp-webp-css": "^1.1.0",
 		"gulp-webp-html": "^1.0.2",
@@ -37,6 +39,8 @@
 		"last 5 versions"
 	],
 	"dependencies": {
+		"@fancyapps/ui": "^5.0.36",
+		"@yandex/ymaps3-default-ui-theme": "^0.0.19",
 		"swiper": "^11.2.6"
 	}
 }

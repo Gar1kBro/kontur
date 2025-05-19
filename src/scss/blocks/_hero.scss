@@ -4,7 +4,7 @@
         margin-top: 20px;
         padding: 60px 10px 60px 90px;
         // background-color: #000;
-        background-image: url('../../img/BG-baner.png');
+        background-image: url('../../img/hero/BG-baner.png');
         background-position: 15% 55%;
         border-radius: 30px;
 
@@ -28,12 +28,32 @@
             line-height: 23px;
         }
 
+        &__text-decor {
+            font-weight: 700;
+        }
+
+        &__text-decor::before {
+            content: '{';
+            font-weight: 400;
+            color: var(--accent)
+        }
+        &__text-decor::after {
+            content: '}';
+            font-weight: 400;
+            color: var(--accent)
+        }
+
         &__button {
             background-color: var(--accent);
             padding: 20px 30px;
             border-radius: 80px;
             color: #fff;
             cursor: pointer;
+            transition: background .3s ease;
+        }
+
+        &__button:hover {
+            background-color: var(--color-hover);
         }
     }
 
@@ -51,10 +71,17 @@
 
 .right-col {
     width: 50%;
+    flex-shrink: 1;
 }
 
+.left-col {
+    width: 50%;
+    flex-shrink: 2;
+}
 
 .right-col > img {
+    display: block;
+    margin: 0 auto;
     object-fit: contain;
 }
 
@@ -71,8 +98,85 @@
     height: 37px;
     border-radius: 50%;
     background-color: var(--accent);
+    background-position: center;
+    background-repeat: no-repeat;
+    // background-size: ;
 }
 
 .swiper-button-prev::after, .swiper-button-next::after {
     content: ">";
+}
+
+.swiper-button-prev  {
+    background-image: url(../../img/hero/Arrow-rigth-light.png);
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+    // background-color: #fff;
+    // opacity: 1;
+}
+
+.swiper-button-prev.swiper-button-disabled {
+    background-image: url(../../img/hero/Arrow-right.png);
+}
+
+.swiper-button-prev  {
+    background-image: url(../../img/hero/Arrow-rigth-light.png);
+}
+
+.swiper-button-next.swiper-button-disabled {
+    background-image: url(../../img/hero/Arrow-left.png);
+
+}
+
+.swiper-button-next {
+    background-image: url(../../img/hero/Arrow-left-light.png);
+}
+
+
+
+
+@media (max-width: 1024px) {
+
+    .hero {
+
+        .baner {
+            padding: 20px 10px;
+            background-position: 50% 35%;
+            text-align: center;
+
+            &__flex {
+                flex-direction: column;
+            }
+
+            &__title {
+                font-size: 24px;
+                width: 100%;
+                text-align: center;
+            }
+
+            &__paragraph {
+                width: 100%;
+                font-size: var(--font-size-small);
+            }
+
+            &__button {
+                margin-bottom: 30px;
+            }
+       
+        }   
+
+
+        .swiper-button-prev, .swiper-button-next {
+            display: none;
+        }
+    }
+
+    .right-col, .left-col {
+    width: 100%;
+    
+}
+
+   
+
 }

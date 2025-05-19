@@ -6,6 +6,104 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Стартовый шаблон</title>
 		<link rel="stylesheet" href="./css/main.css" />
+		<script src="https://api-maps.yandex.ru/v3/?apikey=8df5c7b5-d82b-4841-8125-fd2231e587d1&lang=ru_RU"></script>
+
+
+
+<!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32825ccf49ca321d717fb0f8766439355ae8d288d5e71430d72dca4267460360&amp;width=1280&amp;height=493&amp;lang=ru_RU&amp;scroll=true"></script> -->
+
+
+		<script>
+			initMap();
+	
+			async function initMap() {
+				await ymaps3.ready;
+				const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker} = ymaps3;
+	
+				const map = new YMap(
+					document.getElementById('map'),
+					{
+						location: {
+						// Координаты центра карты
+						center: [82.926493, 55.028894],
+						// Уровень масштабирования
+						zoom: 16
+					},
+					
+					}
+				);
+
+
+				map.addChild(new YMapDefaultSchemeLayer());	
+				map.addChild(new YMapDefaultFeaturesLayer());
+
+				const content = document.createElement('div');
+				const balun = document.createElement('p')
+				content.appendChild(balun);
+			
+
+				// Инициализируйте маркер
+				const marker = new YMapMarker(
+				{
+					coordinates: [82.9258, 55.0296],
+					disableRoundCoordinates: false,
+				},
+				content
+				);
+
+				// Добавьте маркер на карту
+				map.addChild(marker);
+
+				content.style.width = '50px';
+					content.style.height = '50px';
+					content.style.backgroundSize = 'cover';
+					content.style.backgroundImage = "url('../img/map-logo.svg')";
+					content.style.position = 'relative';
+
+					balun.style.position = 'absolute';
+					balun.style.width = '230px';
+					balun.style.padding = '10px';
+					balun.style.borderRadius = '9px';
+					balun.style.fontSize = '18px';
+					balun.style.fontWeight = '700';
+					balun.style.backgroundColor = "#fff";
+					balun.style.top = '0'
+					balun.style.left = '60px';
+					balun.textContent = 'Депутатская улица, 46'
+
+				function myFunction(x) {
+				if (x.matches) { // Если медиа запрос совпадает
+					content.style.width = '30px';
+					content.style.height = '30px';
+					
+					balun.style.width = '200px';
+					balun.style.padding = '10px';
+		
+					balun.style.fontSize = '14px';
+					
+					balun.style.top = '50px'
+					
+					balun.style.left = '-70px';
+					
+				} else {
+					content.style.width = '50px';
+					content.style.height = '50px';
+					
+					balun.style.width = '230px';
+					balun.style.padding = '10px';
+					balun.style.fontSize = '18px';
+					balun.style.top = '0'
+					balun.style.left = '60px';
+				}
+				}
+
+				var x = window.matchMedia("(max-width: 959px)")
+				myFunction(x) // Вызов функции прослушивателя во время выполнения
+				x.addListener(myFunction) // Присоединить функцию прослушивателя при изменении состояния
+			
+    		}
+
+		</script>
 	</head>
 	<body>
 		<header class="header">
@@ -46,9 +144,14 @@
             </ul>
             
         </nav>
-       <a href="tel:84993489396" class="nav__link">
+       <a href="tel:84993489396" class="tel">
     +7 (499) 348 93 96
 </a>
+       <button class="burger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+       </button>
         </div>
     </div>
     <!-- <div class="container">
@@ -75,12 +178,12 @@
                                 <p class="baner__paragraph">
                                     Закажите звонок, и наш специалист свяжется с вами в ближайшее время
                                 </p>
-                                <button class="baner__button">
-                                    Заказать звонок <span class="text-bold">&#8599</span>
+                                <button class="baner__button" data-fancybox data-src="#dialog-content">
+                                    Заказать звонок <span class="text-bold">   &#8599</span>
                                 </button>
                             </div>
                             <div class="right-col">
-                                <img src="../../img/slide1.png" alt="img">
+                                <img src="" alt="img">
                             </div>
                         </div>
                     </div>
@@ -94,12 +197,12 @@
                                 <p class="baner__paragraph">
                                     Всё, что вы узнали, вы тут же начинаете применять на практике. Вы сразу видите результаты своего труда.
                                 </p>
-                                <button class="baner__button">
+                                <button class="baner__button" data-fancybox data-src="#dialog-content">
                                     Заказать звонок <span class="text-bold">&#8599</span>
                                 </button>
                             </div>
                             <div class="right-col">
-                                <img src="../../img/slide2.png" alt="img">
+                                <img src="../../img/hero/slide1.png" alt="img">
                             </div>
                         </div>
                     </div>
@@ -109,17 +212,17 @@
                         <div class="baner__flex ">
                             <div class="left-col">
                                 <h2 class="baner__title">
-                                    Весь материал разбит на небольшие урок
+                                    Весь материал разбит на небольшие уроки
                                 </h2>
                                 <p class="baner__paragraph">
                                     Теория и практика подаются маленькими порциями. Так вам будет легче усваивать новые знания.            </p>
                                 </p>
-                                <button class="baner__button">
+                                <button class="baner__button" data-fancybox data-src="#dialog-content">
                                     Заказать звонок <span class="text-bold">&#8599</span>
                                 </button>
                             </div>
                             <div class="right-col">
-                                <img src="../../img/slide3.png" alt="img">
+                                <img src="../../img/hero/slide3.png" alt="img">
                             </div>
                         </div>
                     </div>
@@ -202,69 +305,81 @@
         </ul>
     </div>
 </section>
-		<section class="info">
+		
+		<section class="galery">
     <div class="container">
-        <div class="info__flex">
-            <div class="info__row">
-                <!-- <div class="img-wrapper"> -->
-                    <img src="../../img/info-section/img2.jpeg" alt="image">
-                <!-- </div> -->
-                <div class="info__box">
-                    <h3 class="info__title">
-                        Помощь и поддержка
-                    </h3>
-                    <p class="info__paragraph">
-                        Если в процессе обучения возникнут сложности, вы всегда сможете задать вопрос своему наставнику.
-                    </p>
-                    <p class="info__paragraph">
-                        Раз в несколько уроков вы будете получать большое задание, которое нужно будет сдавать на проверку код-ревьюеру. Он внимательно изучит ваш код, найдет ошибки и поможет вам стать лучше. 
-                    </p>
-                </div>
-            </div>
-            <div class="info__row">
-                <!-- <div class="img-wrapper"> -->
-                    <img src="../../img/info-section/img1.jpeg" alt="image">
-                <!-- </div> -->
-                <div class="info__box">
-                    <h3 class="info__title">
-                        Методика обучения
-                    </h3>
-                    <p class="info__paragraph">
-                        Весь учебный материал структурирован по принципу «спирального обучения». Сначала вы получаете базовые знания, а затем на каждом витке спирали углубляетесь в изученные темы, доводя их понимание до совершенства. Такой подход упрощает обучение и гарантирует, что вы не пропустите ничего важного.
-                    </p>
-                </div>
-            </div>
+        <div class="galery__grid-box">
+            <img data-fancybox="gallery" src="../../img/galery/img1.png" alt="">
+            <img data-fancybox="gallery" src="../../img/galery/img2.png" alt="">
+            <img data-fancybox="gallery" src="../../img/galery/img3.png" alt="">
+            <img data-fancybox="gallery" src="../../img/galery/img4.png" alt="">
+            <img data-fancybox="gallery" src="../../img/galery/img5.png" alt="">
         </div>
     </div>
 </section>
-		
+		<Section>
+    
+    <div class="container">
+        
+        <div id="map"></div>
+        
+    </div>
+</Section>
+
+
+		<div class="modal-wrapper" id="dialog-content" style="display:none;max-width:500px;">
+    <form action="/submit" class="feedback">
+        <fieldset class="feedback__fieldset">
+            <legend class="feedback__legend"> Заказать звонок </legend>
+                <label class="feedback__label" for="name">Имя</label>
+                <input class="feedback__input" type="text" name="name" id="name" placeholder="ваше  имя">
+                <label class="feedback__label" for="phone">Телефон</label>
+                <input class="feedback__input" type="number" name="phone" id="phone" placeholder="+7 ХХХ - ХХХ - ХХ -ХХ">
+                <label class="feedback__label" for="Email">Email</label>
+                <input class="feedback__input" type="text" name="email" id="email" placeholder="mail@site.com">
+                <label class="feedback__label" for="massege">Сообщение</label>
+                
+                <textarea class="feedback__textarea" name="massege" id="massege" placeholder="Ваше сообщение ..."></textarea>
+                <p class="feedback__text">
+                    Нажимая кнопку “Отправить”,  соглашаюсь с <a class="feedback__link" href="#">политикой конфидениальности</a>
+                </p>
+                <input class="feedback__button" type="submit" value="Отправить &#8599">
+            
+        </fieldset>
+    </form>
+</div>
 		<footer class="footer">
     <div class="container">
         <div class="footer__flex">
-            <div class="left-col">
+            <div class="footer__left-col">
                 <div class="logo">
     <a href="index.html"><span class="logo__c">c</span><span class="logo__o">o</span><span class="logo__d">d</span><span class="logo__e">e</span></a> 
 </div>
-                <span>Школа програмирования</span>
+                <span class="footer__logo-text">Школа програмирования</span>
                 <ul class="footer__list">
                     <li>
-
+                        <a class="footer__link footer__link_inst" href="#">
+                            
+                        </a>
                     </li>
                     <li>
-
+                        <a class="footer__link footer__link_vk" href="#">
+                           
+                        </a>
                     </li>
                     <li>
-
+                       <a class="footer__link footer__link_fb" href="#">
+                            
+                        </a>
                     </li>
                     <li>
-
-                    </li>
-                    <li>
-
+                        <a class="footer__link footer__link_yt" href="#">
+                            
+                        </a>
                     </li>
                 </ul>
             </div>
-            <div class="center-col">
+            <div class="footer__center-col">
                  <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item">
@@ -296,17 +411,17 @@
             
         </nav>
             </div>
-            <div class="right-col">
-                <a href="tel:84993489396" class="nav__link">
+            <div class="footer__right-col">
+                <a href="tel:84993489396" class="tel">
     +7 (499) 348 93 96
 </a>
-                <a href="mailto:info@code.ru">info@code.ru</a>
+                <a class="footer__mail" href="mailto:info@code.ru">info@code.ru</a>
             </div>
         </div>
         <div class="footer__copyrating">
-            <span class="footer__copyrating-text">
+            <p class="footer__copyrating-text">
                &#169 2023 — Все права защищены
-            </span>
+            </p>
             <a class="footer__copyrating-link" href="#">Пользовательское соглашение</a>
             <a class="footer__copyrating-link" href="#">Политика конфиденциальности</a>
         </div>
